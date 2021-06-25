@@ -171,7 +171,7 @@ def main(username, password):
     try:
         hit_carder.get_info()
         personal_info = ('%s %s同学, 你好~' % (hit_carder.info['number'], hit_carder.info['name']))
-        print('%s %s同学, 你好~' % (hit_carder.info['number'], hit_carder.info['name']))
+        # print('%s %s同学, 你好~' % (hit_carder.info['number'], hit_carder.info['name']))
     except Exception as err:
         print('获取信息失败，请手动打卡，更多信息: ' + str(err))
         send_message(title='获取信息失败，请手动打卡，更多信息:', text=str(err))
