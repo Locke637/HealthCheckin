@@ -93,12 +93,16 @@ class HitCarder(object):
             new_id = new_info_tmp['id']
             name = re.findall(r'realname: "([^\"]+)",', html)[0]
             number = re.findall(r"number: '([^\']+)',", html)[0]
+            encrypt_message = re.findall(r'"([a-f0-9]{32})": *"([^\"]+)",', html)
         except IndexError as err:
             raise RegexMatchError('Relative info not found in html with regex: ' + str(err))
         except json.decoder.JSONDecodeError as err:
             raise DecodeError('JSON decode error: ' + str(err))
 
         new_info = old_info.copy()
+        # add encrypt_message
+        for i in encrypt_message:
+            new_info[i[0]] = i[1]
         new_info['id'] = new_id
         new_info['name'] = name
         new_info['number'] = number

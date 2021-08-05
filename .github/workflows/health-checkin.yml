@@ -18,6 +18,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Download Script
+      run: |
+        wget https://raw.githubusercontent.com/Zwysun/HealthCheckin/main/hitcarder.py -O checkin.py
+
     - name: Install Python
       run: |
         sudo apt update && \
@@ -29,7 +33,7 @@ jobs:
        # if [ -f requirements.txt ]; then pip install -r requirements.txt; fi 
     - name: Checkin
       run: |
-        python3 hitcarder.py 
+        python3 checkin.py 
       env: 
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
