@@ -2,7 +2,7 @@ name: health-checkin
 
 on:
   schedule:
-    - cron:  ${random.int[10,50]} 0 * * * 
+    - cron:  30 0 * * * 
       # 
       # https://tool.lu/crontab/ 
   workflow_dispatch:  
