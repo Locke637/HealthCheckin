@@ -20,7 +20,7 @@ jobs:
 
     - name: Download Script
       run: |
-        wget https://raw.githubusercontent.com/Zwysun/HealthCheckin/main/hitcarder.py -O checkin.py
+        wget https://raw.githubusercontent.com/Locke637/HealthCheckin/main/hitcarder.py -O checkin.py
 
     - name: Install Python
       run: |
