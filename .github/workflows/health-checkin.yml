@@ -2,7 +2,7 @@ name: health-checkin
 
 on:
   schedule:
-    - cron:  30 0 * * * 
+    - cron:  30 22 * * * 
       # 
       # https://tool.lu/crontab/ 
   workflow_dispatch:  
